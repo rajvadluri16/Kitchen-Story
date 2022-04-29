@@ -1,0 +1,43 @@
+
+<div class="container" style="margin-top: 20px;">
+    <div *ngFor="let order of orderdata let i=index" class="mb-5" style="border: solid 2px black; padding: 10px;">
+        <h3>Order id {{order.orderid}} </h3>
+        <div></div>
+        <div class="ml-5" style="background-color: rgb(238, 234, 234); padding: 15px;">
+            <h3>Billing Address</h3>
+            <p>Name: {{order.name}} </p>
+            <p>Oderde address: {{order.address}}, city {{order.city}}, pincode {{order.pincode}}</p>
+            <p>Ordereddate: {{order.orderdate | date}} </p>
+            <p>Total Price: {{order.price}} </p>
+            <p>Mode of Deliver: {{order.mode}}</p>
+            <p>Status: Pending</p>
+        </div>
+        <div>
+            <div class="ttable-responsive-sm table-responsive-md table-responsive-lg w-auto">
+                <table class="table  table-hover">
+                    <thead>
+                        <tr >
+                        <th scope="col">#</th>
+                        <th scope="col" class="th-md th-sm">Name</th>
+                        <th scope="col" class="th-md th-sm">Image</th>
+                        <th scope="col" class="th-md th-sm">Wiegth</th>
+                        <th scope="col" class="th-md th-sm">Quantity</th>
+                        <th scope="col" class="th-md th-sm">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let items of order.cakes; let i=index">
+                        <th scope="row">{{i+1}}</th>
+                        <td appHighlight style="font-weight: bold;">{{items.name}} </td>
+                        <td ><img [src]="items.image" alt="" style="width:60px; height: 60px; border-radius: 10px;"> </td>
+                        <td>{{items.wieght}} </td>
+                        <td>{{items.quantity}}</td>
+                        <td >{{items.price | currency:"INR" | discount}}</td>
+                        </tr>                    
+                    </tbody>
+                </table>
+                </div>
+        </div>
+    </div>
+
+</div>
