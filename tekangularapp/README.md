@@ -14,8 +14,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Install these packages to run the project with error
+## Install these packages to run the project without error
 open your angular cli and 
+run `npm istall`
 run `npm install bootstrap` for bootstrap
 run `npm install --save font-awesome angular-font-awesome` for fontawesome icons
 run `npm install @fortawesome/free-solid-svg-icons`
